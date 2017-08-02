@@ -44,7 +44,7 @@ def application(request):
         pprint(request.form)
         signature = request.headers.get('X-Plivo-Signature')
         if signature: # Do some plivo processing
-            auth_token = 'ODRmYWRlMjAwOGY1OTAzMGNhOWM1MDNjNDM5MTM4'
+            auth_token = '<REPLACE WITH TOKEN>'
             params = dict((key, request.form.getlist(key)[0]) for key in request.form.keys())
             print('Signature is {}'.format(validate_signature(url, params, signature, auth_token)))
     elif content_type == 'multipart/form-data':
